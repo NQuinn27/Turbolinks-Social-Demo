@@ -1,0 +1,11 @@
+#reward-module
+  .reward-module-title
+    Rewards
+  .swiper-container
+    .swiper-wrapper
+      - @items.each do |item|
+        %a.swiper-slide{data: { id: "#{item[:id]}" }, :href => "/reward/#{item[:id]}"}
+          .slide-title #{item[:title]}
+          .slide-description #{item[:desc]}
+          .slide-image
+            = image_tag "#{item[:image]}"

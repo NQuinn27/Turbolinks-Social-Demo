@@ -1,0 +1,16 @@
+- @user_name = "Niall"
+= render :partial => 'partials/personal_header'
+%hr.divider-hr
+= render :partial => 'partials/social_interactions'
+= render :partial => 'partials/rewards_module'
+= javascript_include_tag "swiper", "data-turbolinks-track" => true
+:javascript
+  $(document).on('turbolinks:load', function() {
+    console.log("turbolinks:load");
+  });
+  var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    slidesPerView: 'auto',
+    paginationClickable: true,
+    spaceBetween: 15
+  });
